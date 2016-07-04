@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/alert.css">
+    <link rel="stylesheet" href="/stylesheets/confirm.css">-->
+    <link rel="stylesheet" href="/build/css/build.css">
+    <title>新闻列表</title>
+</head>
+
+<body>
+    <div class="container">
+        <table class="table table-hover">
+            <h2 class="header">新闻列表</h2>
+            <a id="addBtn" class="btn btn-info" href="/add.html">新 增</a>
+            <thead>
+                <tr >
+                    <th style="text-align:center; font-size: 27px; width:350px;">标题</th>
+                    <th style="text-align:center; font-size: 27px; width:400px;">图片</th>
+                    <th style="text-align:center; font-size: 27px;">简介</th>
+                </tr>
+            </thead>
+            <tbody id="newsList">
+
+            </tbody>
+        </table>
+    </div>
+
+    <script src="/lib/bootstrap/js/jquery.min.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <!--<script src="/javascripts/index.js"></script>-->
+    <!--<script src="/lib/template.js"></script>-->
+    <script src="/build/index.min.js"></script>
+    <script id="template" type="text/html">
+        {{each list as value i}}
+        <tr>
+            <td class="news-title"><span class="news-title">{{value.newsTitle}}</span></td>
+            <td><img onerror="this.src='/images/err.jpg'"  class="news-list-img" src="{{value.newsImg}}" alt="新闻图片"> </td>
+            <td><p class="news-intro">{{value.newsIntro}}</p></td>
+        </tr>
+            
+        {{/each}}
+    </script>
+
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link href="/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <!--<link rel="stylesheet" href="/stylesheets/style.css">
+    <link rel="stylesheet" href="/stylesheets/alert.css">
+    <link rel="stylesheet" href="/stylesheets/confirm.css">-->
+    <link rel="stylesheet" href="/build/css/build.css">
+    <title>新闻新增</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2 class="header">新闻新增</h2>
+        <form class="form-horizontal" method="post" action="/news/add">
+            <div class="form-group">
+                <label for="newsTitle" class="col-sm-2 control-label">标题</label>
+                <div class="col-sm-8">
+                    <input type="text" class="form-control required" id="newsTitle" name="newsTitle" placeholder="请输入新闻标题">
+                    <span class="required-sign">*</span>
+                    <span class="help-block">请输入新闻标题</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="hidden" name="ImgUrls" id="ImgUrls" />
+                <label class="col-sm-2 control-label">图片</label>
+                <div class="col-sm-9">
+                    <div class="ace-file-input col-xs-4 col-sm-2" id="yl_file_upload">
+                        <label class="file-label selected" data-title="Change">                           
+                            上传文件
+                        </label>
+                    </div>
+                    <div class="thumbnail col-xs-6 col-sm-3">
+                        <img id="m_imgCtrl" onerror="this.src='/images/err.jpg'" src="" style="max-height: 150px; display: block;" />
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="newsIntro" class="col-sm-2 control-label">简介</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control required" name="newsIntro" id="newsIntro" cols="20" rows="5"></textarea>
+                    <span class="required-sign">*</span>
+                    <span class="help-block">请输入新闻简介</span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="newsDetail" class="col-sm-2 control-label">详情</label>
+                <div class="col-sm-8">
+                    <textarea class="form-control" name="newsDetail" id="editor" cols="20" rows="5"></textarea>
+                    <span class="required-sign">*</span>
+                    <span class="help-block">请输入新闻详情</span>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <input type="submit" id="subBtn" class="btn btn-default" value="提交">
+                    
+                </div>
+            </div>
+        </form>
+        <input id="single_image" style="width: 0px; height: 0px;" type="file" name="image">
+    </div>
+    <script src="/lib/bootstrap/js/jquery.min.js"></script>
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/lib/jquery.html5uploader.min.js"></script>
+    <script charset="utf-8" src="/lib/kindeditor-4.1.10/kindeditor.js"></script>
+    <script charset="utf-8" src="/lib/kindeditor-4.1.10/lang/zh_CN.js"></script>
+    <script src="/lib/validate_form.js"></script>
+    <script src="/javascripts/alert.js"></script>
+    <script src="/javascripts/add.js"></script>
+    <!--<script src="/build/add.min.js"></script>-->
+</body>
+
+</html>
