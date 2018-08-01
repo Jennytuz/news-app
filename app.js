@@ -112,7 +112,7 @@ app.use('/news',require('./routes/formidable'));
 app.use('/news',require('./routes/add'));
 app.use('/common/file',require('./routes/common/common'));
 
-var server = app.listen(3000,function(){
+  var server = app.listen(3000,function(){
   var host = server.address().address;
   var port = server.address().port;
   console.log('server is running on '+host+':'+port);

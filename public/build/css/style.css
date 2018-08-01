@@ -1,0 +1,14 @@
+table th:first-child {
+    text-align:center; 
+    font-size: 27px; 
+    width:350px;
+}
+table th:nth-child(2) {
+    text-align:center; 
+    font-size: 27px; 
+    width:400px;
+}
+table th:last-child {
+    text-align:center; 
+    font-size: 27px; 
+}
