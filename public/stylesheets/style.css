@@ -48,10 +48,9 @@ a {
 }
 .news-title{
   text-align: center;
-  
-  font-size: 23px;
+  font-size: 20px;
   font-weight: bold;
 }
 .news-intro{
-  font-size: 20px;
+  font-size: 16px;
 }
