@@ -5,8 +5,13 @@
     <title>新闻详情</title>
 </head>
 <body>
-    <p>标题：{{data.newsTitle}}</p>
-    详情：{{#data.newsDetail}}
-    {{data.newsImg}}
+    <div style="width: 800px;margin: 0 auto;">
+            <h2 style="text-align: center;">标题：<br/>
+                {{data.newsTitle}}</h2>
+            <p>详情：<br/>
+                {{#data.newsDetail}}</p>
+            {{data.newsImg}}
+    </div>
+    
 </body>
 </html>
