@@ -6,11 +6,11 @@
 </head>
 <body>
     <div style="width: 800px;margin: 0 auto;">
-            <img width="300" src="{{data.newsImg}}" alt="">
-            <h2 style="text-align: center;">{{data.newsTitle}}</h2>
-            <p>详情：<br/>
-                {{#data.newsDetail}}</p>
+        <img width="300" src="{{data.newsImg}}" alt="">
+        <div style="float: right; width: 450px;">
+            <h2 style="margin-bottom:20px;">{{data.newsTitle}}</h2>
+            <p>{{#data.newsDetail}}</p>
+        </div>
     </div>
-    
 </body>
 </html>
