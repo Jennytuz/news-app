@@ -9,6 +9,15 @@ var template = require('art-template');
 
 var app = express();
 var form = multer();
+var gulp = require('gulp');
+var sass = require('gulp.sass');
+ 
+gulp.task('sass', function () {
+    gulp.src('./scss/*.scss')
+        .pipe(sass())
+        .pipe(gulp.dest('./css'));
+});
+
 // view engine setup
 // app.set('views', path.join(__dirname, 'views'));
 // app.set('view engine', 'jade');
