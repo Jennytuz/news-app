@@ -1,10 +1,10 @@
+var sass = require('node-sass');
 module.exports = function (grunt) {
 
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json'),
+        // pkg: grunt.file.readJSON('package.json'),
         //代码合并
         // concat: {
-
         //     options: {
         //         separator: ';'
         //     },
@@ -13,6 +13,7 @@ module.exports = function (grunt) {
         //         dest: 'build/build.js'
         //     }
         // },
+
         concat: {
             foo: {
                 files: [
@@ -71,6 +72,18 @@ module.exports = function (grunt) {
                 }
             }
         },
+        // Task configuration.
+        sass: {
+            dist : {
+              options: {
+                implementation: sass,
+                sourceMap:true
+              },
+              files: {
+                'main.css': 'main.scss'
+              }
+            }
+          },
         cssmin: {
             target: {
                 files: {
@@ -78,11 +91,10 @@ module.exports = function (grunt) {
                     'public/build/css/build.css': ['public/stylesheets/style.css', 'public/stylesheets/alert.css','public/stylesheets/confirm.css']
                 }
             }
-            
         },
         watch: {
             scripts: {
-                files: ['Gruntfile.js','package.json','public/javascripts/*.js','public/lib/*.js','src/css/*.css'],
+                files: ['Gruntfile.js','package.json','public/javascripts/*.js','public/lib/*.js','public/scss/*.scss'],
                 tasks: ['default']
             }
         }
@@ -94,10 +106,12 @@ module.exports = function (grunt) {
     //对代码进行压缩
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
+    grunt.loadNpmTasks('grunt-contrib-sass');
+    
     grunt.loadNpmTasks('grunt-contrib-cssmin');
 
     grunt.loadNpmTasks('grunt-contrib-watch');
     // 默认被执行的任务列表
-    grunt.registerTask('default', ['jshint', 'concat', 'uglify', 'cssmin', 'watch']);
+    grunt.registerTask('default', ['jshint', 'concat', 'uglify',  'sass','cssmin', 'watch']);
 
 };

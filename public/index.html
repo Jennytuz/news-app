@@ -39,7 +39,7 @@
     <script id="template" type="text/html">
         {{each list as value i}}
         <tr>
-            <td class="news-title"><span class="news-title">{{value.newsTitle}}</span></td>
+            <td class="news-title"><a target="_blank" href="/news?newsTime={{value.newsTime}}" class="news-title">{{value.newsTitle}}</a></td>
             <td><img onerror="this.src='/images/err.jpg'"  class="news-list-img" src="{{value.newsImg}}" alt="新闻图片"> </td>
             <td><p class="news-intro">{{value.newsIntro}}</p></td>
         </tr>
